@@ -18,4 +18,6 @@
 
 第三次上传的文件夹，包括：
 
-**将hellaswag转换为文本二分类问题，利用Transformer模型解决。**
+**1. 将hellaswag转换为文本二分类问题，利用Transformer模型解决。**
+
+**2. 利用NLTK的wordnet计算前文和ending的相似度。**

@@ -6,7 +6,7 @@
 
 在Transformer的Encoder中，数据会依次经过'self-attention'模块和'Feed Forward Neural Network'模块。
 
-<img src="Transformer.assets/encoder.PNG" alt="encoder" style="zoom: 67%;" />
+<img src="README.assets/encoder.PNG" alt="encoder" style="zoom: 67%;" />
 
 **self-attention：**
 
@@ -26,7 +26,7 @@ $$
 
 ### 模型结构
 
-<img src="Transformer.assets/model.PNG" alt="model" style="zoom: 80%;" />
+<img src="README.assets/model.PNG" alt="model" style="zoom: 80%;" />
 
 1.词嵌入部分
 
@@ -34,7 +34,7 @@ $$
 
 由于attention没有包含位置信息，因此增加了position embedding来加入位置信息。位置编码公式如下：
 
-![position encoding](Transformer.assets/position encoding.png)
+<img src="README.assets/position encoding.png" alt="position encoding" style="zoom:80%;" />
 
 2.编码层部分
 
@@ -65,3 +65,31 @@ train_eval.py：模型的训练、测试和调用函数的实现。
 训练集有2500条原始数据，即10000条二分类数据；验证集和测试集都是500条原始数据，即2000条二分类数据。
 
 最终在验证集上的准确率是0.302，测试集上的准确率是0.308.
+
+
+
+# Commonsense Knowledge
+
+利用外部知识计算前文和ending的相似度，从而预测ending。
+
+### 程序流程：
+
+**1.数据预处理**
+
+分词 -> 只保留英文单词，去除停用词 -> 利用NLTK进行词性标注 -> 利用NLTK进行词形还原 -> 去重，提取出句子中的概念（关键词）
+
+**2.前文和ending相似度的计算**
+
+<img src="README.assets/cal.PNG" alt="cal" style="zoom: 67%;" />
+
+图中，S1、S2、S3是前文中的概念，E1、E2是ending中的概念。计算方法如下：
+
+计算ending中的每个概念和前文的所有概念的相似度。以E1为例，计算E1和S1、S2、S3的相似度，然后取最大值作为E1的得分，E2同理。将ending中的概念的得分取平均值即为该ending的得分，取得分最高的ending作为预测的结果。
+
+当至少有一个句子中的概念数为0时，取一定数量的相似度计算结果的平均值作为相似度的值。
+
+**其中，概念之间的相似度利用NLTK的wordnet计算。**
+
+### 运行结果
+
+测试集数据量为300条时，准确率为0.27；数据量为500条时，准确率为0.282.
