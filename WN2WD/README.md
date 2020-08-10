@@ -1,7 +1,23 @@
-many_models_cal_sim1.0中的data、original_data_all、models_mid_result文件夹过大，没有上传；models文件夹中的大文件没有上传。
+# Mapping of WordNet to WikiData
 
-many_models_cal_sim2.0中的original_data_all、data文件夹过大，没有上传；models文件夹中的大文件没有上传。
+We propose an **Ensemble Method (EM)** and a **Comprehensive Similarity Method (CSM)** to map WordNet into WikiData. Among them, CSM has the highest correct rate, the final mapping results is 'mapping results.pkl'.
 
-CSM中的data/original_data因为太大没有上传。
 
-EM/Model_Combination2/Contextual_Models/run_data.pkl(2020/6/5 17:08)太大没有上传。
+
+## Ensemble Method (EM)
+
+For the model selection, we use two combinations.
+
+### Model Combination1
+
+There are six models in this model combination, including three Non-Contextual models: LDA, Word2Vec, FastText, and three Contextual models: MaLSTM, BERT, XLNet.
+
+### Model Combination2
+
+There are eight models in this model combination, including three Non-Contextual models: LDA, Word2Vec, FastText, and five Contextual models: Siamese LSTM, Siamese XLNet, Siamese BERT, Siamese RoBERTa, Siamese DistilBERT.
+
+
+
+## Comprehensive Similarity Method (CSM) 
+
+We combine the description similarity and the label similarity as the comprehensive similarity.
