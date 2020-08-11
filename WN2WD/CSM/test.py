@@ -78,14 +78,3 @@ if __name__ == '__main__':
             print('candi number:', value[7])
             print('lab rank|des rank:', value[8:])
             print('--'*50)
-
-    '''# print(wn.synsets('hood'))
-    a = wn.synset("weasel.n.02")
-    # print(a.definition())
-    # print(a.lemma_names())
-    print(a.hypernyms())     # 上位词（父类）
-    print(a.hyponyms())      # 下位词（子类）
-    print(a.entailments())     # 动词中的蕴含关系
-    print(a.part_meronyms())     # 部分
-    print(a.substance_meronyms())   # 实质
-    print(a.member_holonyms())     # 该物品作为成员，组成的东西'''

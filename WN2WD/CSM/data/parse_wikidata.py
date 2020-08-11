@@ -3,6 +3,8 @@ import jsonlines
 import pickle
 from tqdm import tqdm
 
+read_path = 'part-'    # wikidata文件的路径
+save_path = 'wiki.pkl'   # 生成的pkl文件的路径
 
 dict_keys=['labels', 'qnode', 'title', 'statement_count',
            'text', 'sitelink_count', 'namespace', 'namespace_text', 
@@ -43,8 +45,5 @@ def read_of_nodes(path, read):
         pickle.dump(all_data, f)
     print('write to file done')
 
-
-read_path = 'part-'    # wikidata文件的路径
-save_path = 'wiki.pkl'   # 生成的pkl文件的路径
 
 read_of_nodes(save_path, read_path)
