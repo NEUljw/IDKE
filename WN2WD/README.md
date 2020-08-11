@@ -4,7 +4,7 @@ We propose an **Ensemble Method (EM)** and a **Comprehensive Similarity Method (
 
 
 
-Ensemble Method (EM)
+## Ensemble Method (EM)
 
 For the model selection, we use two combinations.
 
