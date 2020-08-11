@@ -33,6 +33,7 @@ There are eight models in this model combination, including three Non-Contextual
 ## Comprehensive Similarity Method (CSM) 
 
 We combine the description similarity and the label similarity as the comprehensive similarity.
+<<<<<<< HEAD
 
 The operation steps are as follows:
 
@@ -47,3 +48,5 @@ The operation steps are as follows:
 10. Set the path parameters in `merge_candidate.py` and run to merge the two candidate sets.
 11. Set the path parameters in `EM/Model_Combination2/Contextual_Models/encode_and_save.py` and run to generate the embeddings of descriptions.
 12. Set the path parameters in `embed_lab_sim.py` and run it to generate the final mapping results.
+=======
+>>>>>>> 8f68dbf854e3ffcb8e10efdbe569759f8798a7f8
