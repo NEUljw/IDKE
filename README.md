@@ -21,11 +21,3 @@
 **1. 将hellaswag转换为文本二分类问题，利用Transformer模型解决。**
 
 **2. 利用NLTK的wordnet计算前文和ending的相似度。**
-
-### Transformer学习笔记
-
-包括：
-
-**1. 对Transformer模型的笔记。**
-
-**2. Transformer模型解决机器翻译任务的代码实现。**
